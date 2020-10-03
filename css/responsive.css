@@ -508,6 +508,9 @@ License URI:
     .whoare_content h3{
         font-size: 30px;
     }
+    .mt42{
+        margin-top: 0px;
+    }
 /*    .slider .slotholder .tp-bgimg.defaultimg {
         background-size: auto !important;
         background-position: left bottom !important;

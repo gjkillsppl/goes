@@ -61,6 +61,7 @@ License URI:
 .logo{
     text-align: left;
     padding: 31px 0 20px;
+    min-width: 150px;
 }
 .logo img{
     max-width: 100%;

@@ -199,68 +199,6 @@ License URI:
     });
 
     /*--------------------------------------------------------
-    / 6. Fun Fact Count
-     ----------------------------------------------------------*/
-    var skl = true;
-    $('.singlefunfact').appear();
-    $('.singlefunfact').on('appear', function () {
-        if (skl)
-        {
-            $('.timer').each(function () {
-                var $this = $(this);
-                jQuery({Counter: 0}).animate({Counter: $this.attr('data-counter')}, {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function () {
-                        var num = Math.ceil(this.Counter).toString();
-                        if (Number(num) > 999) {
-                            while (/(\d+)(\d{3})/.test(num)) {
-                                num = num.replace(/(\d+)(\d{3})/, '<span class="countSpan">' + '$1' + '</span>' + '$2');
-                            }
-                        }
-                        $this.html(num);
-                    }
-                });
-            });
-            skl = false;
-        }
-    });
-
-    /*--------------------------------------------------------
-    / 7. Team Member Skills
-    /----------------------------------------------------------*/
-
-    if ($(".teamSkills").length > 0)
-    {
-        $('.teamSkills').appear();
-        $('.teamSkills').on('appear', loadSkills);
-    }
-    var coun = true;
-    function loadSkills()
-    {
-        $(".singleSkill").each(function () {
-            var datacount = $(this).attr("data-limit");
-            $(".skill", this).animate({'width': datacount + '%'}, 4000);
-            $(".rounds", this).animate({'left': datacount + '%'}, 4000);
-            if (coun)
-            {
-                $(this).find('.parcent').each(function () {
-                    var $this = $(this);
-                    $({Counter: 0}).animate({Counter: datacount}, {
-                        duration: 4000,
-                        easing: 'swing',
-                        step: function () {
-                            $this.text(Math.ceil(this.Counter) + '%');
-                        }
-                    });
-                });
-
-            }
-        });
-        coun = false;
-    }
-
-    /*--------------------------------------------------------
     / 8. Clinet Slider
     /----------------------------------------------------------*/
 
@@ -290,76 +228,6 @@ License URI:
     });
 
 
-    /*--------------------------------------------------------
-    / 9. Google Map
-    /----------------------------------------------------------*/
-
-    if ($('#gmap').length > 0) {
-        var contact_map
-        contact_map = new GMaps({
-            el: '#gmap',
-            lat: 40.728157,
-            lng: -74.077644,
-            scrollwheel: false,
-            zoom: 11,
-            zoomControl: false,
-            panControl: false,
-            streetViewControl: false,
-            mapTypeControl: false,
-            overviewMapControl: false,
-            clickable: false
-        });
-        contact_map.addMarker({
-            lat: 40.728157,
-            lng: -74.077644,
-            icon: "images/marker.png",
-            animation: google.maps.Animation.DROP
-        });
-        
-        var styles = [
-            {
-                "featureType" : "road",
-                "stylers" : [
-                    {"color" : "#ffffff"}
-                ]
-            }, {
-                "featureType" : "water",
-                "stylers" : [
-                    {"color" : "#ecedf1"}
-                ]
-            }, {
-                "featureType" : "landscape",
-                "stylers" : [
-                    {"color" : "#f7f8fc"}
-                ]
-            }, {
-                "elementType" : "labels.text.fill",
-                "stylers" : [
-                    {"color" : "transparent"}
-                ]
-            }, {
-                "featureType" : "poi",
-                "stylers" : [
-                    {"color" : "#e4e5e9"}
-                ]
-            }, {
-                "elementType" : "labels.text",
-                "stylers" : [
-                    {"saturation" : 1},
-                    {"weight" : 0.1},
-                    {"color" : "#737980"}
-                ]
-            }
-
-        ];
-        contact_map.addStyle({
-            styledMapName : "Styled Map",
-            styles : styles,
-            mapTypeId : "map_style"
-        });
-
-        contact_map.setStyle("map_style");
-    }
 
     /*--------------------------------------------------------
     / 10. Parallax BG
@@ -386,91 +254,7 @@ License URI:
         type: 'iframe'
     });
 
-    /*--------------------------------------------------------
-    / 12. Menu PopUp 
-    /----------------------------------------------------------*/
 
-    $(document).ready(function () {
-
-        $("#close-popup").on('click', function (e) {
-            e.preventDefault();
-            $("body").removeClass("menu__open show-overlay-nav")
-        })
-        $(".hamburger").on("click", function () {
-            $(this).toggleClass("is_active"), $("body").toggleClass("menu__open")
-        }), $(document).keyup(function (e) {
-            27 === e.keyCode && $(".menu__open .hamburger").click()
-        }), $("#open-overlay-nav").on("click", function () {
-            $("body").toggleClass("show-overlay-nav")
-        }), $(".dl-menu__wrap").dlmenu({
-            animationClasses: {
-                classin: "dl-animate-in-3",
-                classout: "dl-animate-out-3"
-            }
-        });
-
-
-        var r = $(".top:not(.navbar-fixed)");
-        $(".top").affix({
-            offset: {
-                top: 1
-            }
-        }), $(".top").on("affix.bs.affix", function () {
-            r.hasClass("affix") || r.addClass("animated slideInDown")
-        }), $(".top").on("affix-top.bs.affix", function () {
-            r.removeClass("animated slideInDown")
-        }), $('.navbar-nav li a[href="#"]').on("click", function () {
-            return $(this).closest("li").toggleClass("current"), $(this).closest("li").children("ul").slideToggle(400), !1
-        }), $(".filter-categories__item").on("click", function () {
-            $(this).addClass("filter-categories__item_current"), $(this).siblings().removeClass("filter-categories__item_current")
-        }), $("#open-popup").on("click", function () {
-            $("body").toggleClass("show-popup")
-        }), $("#close-popup").on("click", function () {
-            $("body").removeClass("show-popup")
-        }), $(document).keyup(function (e) {
-            27 === e.keyCode && $("#close-popup").click()
-        })
-
-    });
-
-    /*--------------------------------------------------------
-    / 13. Search PopUp 
-    /----------------------------------------------------------*/
-
-    $('.searchToggler').on('click', function (e) {
-        e.preventDefault();
-        $('.searchFixed').fadeToggle();
-    });
-    var search_form = $(".searchFixed");
-    $(document).on('mouseup', function (e) {
-        var container = search_form;
-
-        if (!container.is(e.target) && container.has(e.target).length === 0)
-        {
-            $('.searchFixed').fadeOut();
-        }
-
-    });
-
-    /*--------------------------------------------------------
-    / 14. Mobile Menu
-    /----------------------------------------------------------*/
-
-    if ($('.mobilemenu').length > 0) {
-        $('.mobilemenu').on('click', function () {
-            var w = $(window).width();
-            $(this).toggleClass('active');
-            $('.mainMenu > ul').slideToggle('slow');
-        });
-        if ($(window).width() < 768)
-        {
-            $('.mainMenu > ul li.menu-item-has-children > a').on('click', function (e) {
-                e.preventDefault();
-                $(this).parent().toggleClass('active');
-                $(this).parent().children('.sub-menu').slideToggle('slow');
-            });
-        }
-    }
 
     /*--------------------------------------------------------
     / 15. Bact To Top Button
@@ -516,17 +300,6 @@ License URI:
         }
     });
     
-     /*--------------------------------------------------------
-     / 18. Right Side Fixed Menu
-     /----------------------------------------------------------*/
-     $('.fixednavHeader ul li.scroll > a').on('click', function(){
-        if($(this).parent().hasClass('has-child'))
-        {
-            $(this).parent().children('ul').slideToggle('slow');
-        }
-        $('html, body').animate({scrollTop : $(this.hash).offset().top + 10}, 1000);
-        return false;
-     });
 
     /*--------------------------------------------------------
     / 19. Menu Scroll Function
@@ -601,42 +374,7 @@ License URI:
         });
     }
 
-    /*--------------------------------------------------------
-    / 20. Portfolio Popup
-    /----------------------------------------------------------*/
 
-    $('.popupEnabler').on('click', function (e) {
-        e.preventDefault();
-        var $this = $(this);
-        var files = $this.attr('href');
-
-        $('.portfolioPopUp').addClass('bounceInDown').fadeIn('fast', function () {
-            $('body').addClass('hiddenOverflow');
-            setTimeout(function () {
-                $("#popupContentHolder").load("ajax/folio_01.html", function () {
-                    $('.folio_slider').owlCarousel({
-                        loop: true,
-                        margin: 0,
-                        responsiveClass: true,
-                        items: 1,
-                        dots: false,
-                        nav: true,
-                        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
-                    });
-                });
-            }, 3000);
-        });
-
-    });
-    $('.portfolioPopUp').on('click', '.closePopUp', function (e) {
-        e.preventDefault();
-        var $this = $(this);
-        $('.portfolioPopUp').removeClass('bounceInDown').fadeOut('slow', function () {
-            $('body').removeClass('hiddenOverflow');
-            $("#popupContentHolder").html('<div class="folioLoader text-center"><span class="let1">l</span><span class="let2">o</span><span class="let3">a</span><span class="let4">d</span><span class="let5">i</span><span class="let6">n</span><span class="let7">g</span></div>');
-        });
-    });
-    
     /*--------------------------------------------------------
     / 21. Color Preset
     /----------------------------------------------------------*/
