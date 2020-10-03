@@ -227,6 +227,32 @@ License URI:
         }
     });
 
+    $('.fotos_slider').owlCarousel({
+        items: 2,
+        loop: true,
+        margin: 30,
+        autoplay:true,
+        autoplaySpeed:200,
+        dots: true,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            500: {
+                items: 2
+            },
+            768: {
+                items: 4
+            },
+            1200: {
+                items: 4
+            }
+        }
+    });
+
+
 
 
     /*--------------------------------------------------------
