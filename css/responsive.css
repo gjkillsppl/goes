@@ -30,6 +30,11 @@ License URI:
 / 1. Mobile Responsive. Responsive For Extra Small Device like: Mobile, Iphone etc
 --------------------------------------------------------------------------------------*/
 @media (min-width: 320px) and (max-width: 767px){
+
+    .logo{
+
+        max-width:150px;
+    }
     .mainMenu{
         padding: 0;
         margin: 0 -15px;

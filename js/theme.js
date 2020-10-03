@@ -273,7 +273,9 @@ License URI:
         responsiveClass: true,
         responsive: {
             0: {
-                items: 1
+                items: 1,
+                dots: true,
+                autoplay: true
             },
             500: {
                 items: 2
