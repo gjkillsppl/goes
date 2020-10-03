@@ -3133,3 +3133,8 @@ select#inversion {
     border-radius: 5px;
     margin-bottom: 15px;
 }
+
+.ver_video a{
+    color:#000;
+    font-weight:600;
+}
