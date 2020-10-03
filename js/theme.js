@@ -451,7 +451,7 @@ License URI:
     {
         $("#contactForm").on('submit', function(e) {
             e.preventDefault();
-            $("#con_submit").html('Processsing...');
+            $("#con_submit").html('Enviando...');
             var f_name = $("#f_name").val();
             var l_name = $("#l_name").val();
             var email = $("#email").val();
@@ -489,14 +489,14 @@ License URI:
                         $("#con_submit").html('Done!');
                         $("#contactForm input, #contactForm textarea").val('');
                         setTimeout(function() {
-                            $("#con_submit").html('Send Message');
+                            $("#con_submit").html('Enviar');
                         }, 2500);
                     }
                 });
             }
             else
             {
-                $("#con_submit").html('Failed!');
+                $("#con_submit").html('Error');
             }
 
         });
