@@ -244,10 +244,10 @@ License URI:
                 items: 2
             },
             768: {
-                items: 4
+                items: 3
             },
             1200: {
-                items: 4
+                items: 3
             }
         }
     });
@@ -462,7 +462,7 @@ License URI:
             $(".required", this).each(function() {
                 if ($(this).val() == '')
                 {
-                    $(this).addClass('reqError');
+                    $(this).addClass('reqError');   
                     required += 1;
                 }
                 else

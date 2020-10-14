@@ -48,6 +48,10 @@ License URI:
 33. Color Preset
 */
 
+html {
+    scroll-behavior: smooth;
+  }
+
 /*------------------------------------------------------------------------------
 / 1. Header 01
 ------------------------------------------------------------------------------*/
@@ -499,22 +503,9 @@ License URI:
     width: 100%;
 }
 .slider_4 .singnature{
-    font-size: 30px;
     font-weight: 300;
     margin-bottom: 10px !important;
     position: relative;
-    transition: all ease 1200ms;
-    -webkit-transition: all ease 1200ms;
-    -moz-transition: all ease 1200ms;
-}
-.slider_4 .singnature:after{
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    content: '';
-    background: url(../images/slider/signature.png) no-repeat left bottom;
-    width: 172px;
-    height: 9px;
     transition: all ease 1200ms;
     -webkit-transition: all ease 1200ms;
     -moz-transition: all ease 1200ms;
@@ -550,7 +541,16 @@ License URI:
 / 9. Discover Section
 ------------------------------------------------------------------------------*/
 .discoverSection{
-    background: url(../images/bg/1.png) no-repeat center center;
+    background-color:#396cf0;
+}
+
+.discoverSection .section_title{
+
+    color:white;
+}
+
+.discoverSection .section_desc{
+    color:white;
 }
 .mb82{
     margin-bottom: 82px;
@@ -602,7 +602,7 @@ License URI:
     position: relative;
 }
 .perelaxBg1 {
-    background: rgba(0, 0, 0, 0) url(../images/bg/parallaxbg_1.png) no-repeat center  center;
+    
     left: 0;
     position: absolute;
     right: 0;
@@ -734,7 +734,7 @@ License URI:
 / 12. About Us Section
 ------------------------------------------------------------------------------*/
 .perelaxBg2 {
-    background: rgba(0, 0, 0, 0) url(../images/bg/parallaxbg_2.png) no-repeat center  center;
+    
     left: 0;
     position: absolute;
     right: 0;
@@ -745,7 +745,7 @@ License URI:
     z-index: 1;
 }
 .aboutUsSection{
-    background: url(../images/bg/5.png) no-repeat center center;
+   
 }
 .aboutus_content{
     position: relative;
@@ -1438,7 +1438,11 @@ License URI:
 / 20. Contact Section
 ------------------------------------------------------------------------------*/
 .contactsection{
-    background: url(../images/bg/5.png) no-repeat center center;
+    background: #396cf0;
+}
+
+.contactsection  .section_title, .contactsection  .section_desc {
+    color:#fff;
 }
 .contactForm{
     padding: 0 0 0;
@@ -3139,6 +3143,11 @@ select#inversion {
     font-weight:600;
 }
 
-.cta_title{
-    font-size:48px;
+.readysection .section_title{
+    font-size:32px;
+    line-height: 42px;
+}
+
+.vivamexico img{
+    min-width:150px;
 }

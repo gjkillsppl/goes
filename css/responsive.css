@@ -141,7 +141,8 @@ License URI:
         text-align: center;
     }
     .section_title{
-        font-size: 36px;
+        font-size: 24px;
+         line-height: 125%;
     }
     .section_desc br{
         display: none;
@@ -217,7 +218,7 @@ License URI:
         margin: 0 0 30px;
     }
     .readysection .section_title{
-        line-height: 40px;
+        font-size:24px;
         margin: 0 0 30px;
     }
     .readysection .common_btn{
@@ -547,6 +548,10 @@ License URI:
     .leftjoin .pdLeft_50, .rightjoin .pdLeft_50{
         padding-left: 50px;
         padding-right: 100px;
+    }
+
+    .rev_slider br{
+        display:none;
     }
 }
 
