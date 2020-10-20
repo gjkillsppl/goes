@@ -23,6 +23,30 @@
 
         <!-- Favicon Icon -->
         <link rel="icon"  type="image/png" href="images/favicon.png">
+        <!-- Global site tag (gtag.js) - Google Ads: 527576458 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-527576458"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-527576458');
+        </script>
+        <script>
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-527576458/M6WCCNPxmeMBEIrbyPsB',
+                  'event_callback': callback
+              });
+              return false;
+            }
+        </script>
+        
     </head>
     <body>
         <!-- Preloader -->
@@ -455,15 +479,15 @@
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
                                     <select name="inversion" id="inversion">
-                                        <option selected="true" disabled="disabled">Selecciona un Monto</option>
-                                        <option value="volvo">De 5 a 10 mil</option>
-                                        <option value="saab">De 10 a 20 mil</option>
-                                        <option value="mercedes">De 20 mil en adelante</option>
+                                        <option selected="true" disabled="disabled">¿Cuánto deseas invertir?</option>
+                                        <option value="De 5 a 10 mil">De 5 a 10 mil</option>
+                                        <option value="De 10 a 20 mil">De 10 a 20 mil</option>
+                                        <option value="De 20 mil en adelante">De 20 mil en adelante</option>
                                       </select>
                                 </div>
                             </div>
                             <textarea class="input-form required" name="con_message" id="con_message" placeholder="Escribe un Mensaje"></textarea>
-                            <button class="common_btn fix_btn" type="submit" id="con_submit">Enviar</button>
+                            <button onclick="return gtag_report_conversion('http://goes.mx')" class="common_btn fix_btn" type="submit" id="con_submit">Enviar</button>
                         </form>
                     </div>
                 </div>

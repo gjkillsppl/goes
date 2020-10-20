@@ -3,10 +3,11 @@ $f_name = $_POST['f_name'];
 $l_name = $_POST['l_name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
+$inversion = $_POST['inversion'];
 $message = $_POST['message'];
 
-$to = 'layerdrops@gmail.com';
-$subject = 'Yoox User Query';
+$to = 'aminwejebes@hotmail.com';
+$subject = 'Nuevo envio de formulario LP Goes';
 
 $message = '<strong>Name : </strong>'.$f_name.' '. $l_name .'<br/><br/>';
 if($phone != ''):
